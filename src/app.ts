@@ -20,27 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import {AppLib} from './app-core/lib';
-import './mycss.css';
-import './mycss2.css';
+import { AppLib } from './app-core/lib';
+import './scss/styles.scss';
 
 let appLib = new AppLib();
 
 let myapp: any = {
-    myfunction : function () { document.getElementById('info').innerHTML = NL_NAME + " is running on port " +
-                    NL_PORT + " inside " + NL_OS + "<br/><br/>" + "<span>v" + NL_VERSION + "</span>"; }
+  myfunction: function () {
+    document.getElementById('info').innerHTML =
+      NL_NAME +
+      ' is running on port ' +
+      NL_PORT +
+      ' inside ' +
+      NL_OS +
+      '<br/><br/>' +
+      '<span>v' +
+      NL_VERSION +
+      '</span>';
+  },
 };
-    
 
 Neutralino.init({
-    load: function() {
-        myapp.myfunction();
-        appLib.showSettings();
-    },
-    pingSuccessCallback : function() {
-
-    },
-    pingFailCallback : function() {
-
-    }
+  load: function () {
+    myapp.myfunction();
+    appLib.showSettings();
+  },
+  pingSuccessCallback: function () {},
+  pingFailCallback: function () {},
 });
